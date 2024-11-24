@@ -1,111 +1,89 @@
 import streamlit as st
-import os
-import pandas as pd
-import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 from matplotlib.image import imread
+from src.machine_learning.evaluate_clf import load_test_evaluation
 
-import itertools
-import random
 
-def page_cherry_leaves_visualizer_body():
-    st.write("### Cherry Leaves Visualiser")
-    st.info(
-        f"A study that visually differentiates between a healthy and powdery "
-        f"mildew cherry leaf.")
-    
-    st.success(
-        f" A healthy cherry leaf and a powdery mildew-infected cherry leaf can be distinguished by:\n\n"
-        f" Healthy Cherry Leaf:\n"
-        f" * Color - Even green hue.\n"
-        f" * Texture - Smooth surface with no abnormal growths or spots.\n"
-        f" * Shape - Maintains its normal, undistorted form.\n\n"
-        f" Powdery Mildew-Infected Cherry Leaf:\n"
-        f" * Color - Exhibits white or grayish powdery patches, typically starting on the upper surface.\n"
-        f" * Texture - Powdery or dusty appearance on the leaf.\n"
-        f" * Shape - Leaves may be curled, twisted, or distorted, with severe cases leading to yellowing "
-        f" and early leaf drop.\n")
-    
+def page_ml_performance_metrics():
     version = 'v1'
-    if st.checkbox("Difference between average and variability image"):
-      
-      avg_powdery_mildew = plt.imread(f"outputs/{version}/avg_var_powdery_mildew.png")
-      avg_healthy = plt.imread(f"outputs/{version}/avg_var_healthy.png")
 
-      st.warning(
-        f"* We notice the average and variability images did not show "
-        f"patterns where we could intuitively differentiate one from another. " 
-        f"However, a small difference in the colour pigment of the average images is seen for both labels.")
+    st.write("### Label Frequencies on Train, Validation and Test Sets")
 
-      st.image(avg_powdery_mildew, caption='Powdery Mildew Leaves - Average and Variability')
-      st.image(avg_healthy, caption='Healthy Leaves - Average and Variability')
-      st.write("---")
+    st.info(
+        f" The cherry leaves dataset was divided into three subsets:\n\n"
+        f" * The training set comprises 1,472 images, representing 70% of the entire dataset. This data is used to "
+        f" train the model, enabling it to generalize and make predictions on new, unseen data.\n\n"
+        f" * The validation set comprises 210 images, representing 10% of the entire dataset. Assists in enhancing the "
+        f" model's performance by refining it after each epoch, which is a full pass of the training set through the model.\n\n"
+        f" * The test set comprises 422 images, representing 20% of the entire dataset. Provides information about the model's "
+        f" final accuracy after the training phase is completed. This evaluation uses a batch of data that the model has never seen before.")
 
-    if st.checkbox("Differences between a healthy and powdery mildew leaf"):
-          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
-
-          st.warning(
-            f"* We notice this study didn't show "
-            f"patterns where we could intuitively differentiate one from another.")
-          st.image(diff_between_avgs, caption='Difference between average images')
-
-    if st.checkbox("Image Montage"): 
-      st.write("* To refresh the montage, click on the 'Create Montage' button")
-      my_data_dir = 'inputs/cherry_leaves_dataset/cherry-leaves'
-      labels = os.listdir(my_data_dir+ '/validation')
-      label_to_display = st.selectbox(label="Select label", options=labels, index=0)
-      if st.button("Create Montage"):      
-        image_montage(dir_path= my_data_dir + '/validation',
-                      label_to_display=label_to_display,
-                      nrows=8, ncols=3, figsize=(10,25))
-      st.write("---")
+    labels_distribution = plt.imread(f"outputs/{version}/label_dist.png")
+    st.image(labels_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
+    st.write("---")
 
 
-def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
-  """
-  Display a montage of images from a specified directory
-  """
-  sns.set_style("white")
-  labels = os.listdir(dir_path)
+    st.write("### Model History")
 
-  # subset the class you are interested to display
-  if label_to_display in labels:
+    st.info(
+        f" **Model training - Accuracy and Loss**\n\n"
+        f" Accuracy measures how closely the model's predictions (accuracy) match the true data (val_acc).\n"
+        f" A good model that performs well on unseen data demonstrates its ability to generalize and avoid overfitting to the training dataset.\n\n"
+        f" The loss is the total of errors made for each example in the training (loss) or validation (val_loss) sets.\n"
+        f" The loss value indicates how poorly or well a model performs after each optimization iteration.")
 
-    # checks if your montage space is greater than subset size
-    # how many images in that folder
-    images_list = os.listdir(dir_path+'/'+ label_to_display)
-    if nrows * ncols < len(images_list):
-      img_idx = random.sample(images_list, nrows * ncols)
-    else:
-      print(
-          f"Decrease nrows or ncols to create your montage. \n"
-          f"There are {len(images_list)} in your subset. "
-          f"You requested a montage with {nrows * ncols} spaces")
-      return
+    col1, col2 = st.beta_columns(2)
+    with col1: 
+        model_acc = plt.imread(f"outputs/{version}/model_training_accuracy.png")
+        st.image(model_acc, caption='Model Training Accuracy')
+    with col2:
+        model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
+        st.image(model_loss, caption='Model Training Losses')
 
-    # create list of axes indices based on nrows and ncols
-    list_rows= range(0,nrows)
-    list_cols= range(0,ncols)
-    plot_idx = list(itertools.product(list_rows,list_cols))
+    st.info(
+        f" **The model learning ROC curve**\n\n"
+        f" Loss (Blue) and Validation Loss (Green):\n "
+        f" * Loss measures the prediction accuracy, the lower the loss the better.\n"
+        f" indicating good performance on unseen data.\n\n"
+        f"Accuracy (Orange) and Validation Accuracy (Red):\n"
+        f" * Accuracy measures the proportion of correct predictions.\n\n"
+        f"In summary, both the training and validation losses decrease and stabilize at low values, indicating "
+        f" that the model has converged; the high training and validation accuracies show the model is "
+        f" performing well; and the close alignment between the training and validation metrics indicates the "
+        f" model is not overfitting and can generalize well on new data.")
 
-    # create a Figure and display images
-    fig, axes = plt.subplots(nrows=nrows,ncols=ncols, figsize=figsize)
-    for x in range(0,nrows*ncols):
-      img = imread(dir_path + '/' + label_to_display + '/' + img_idx[x])
-      img_shape = img.shape
-      axes[plot_idx[x][0], plot_idx[x][1]].imshow(img)
-      axes[plot_idx[x][0], plot_idx[x][1]].set_title(f"Width {img_shape[1]}px x Height {img_shape[0]}px")
-      axes[plot_idx[x][0], plot_idx[x][1]].set_xticks([])
-      axes[plot_idx[x][0], plot_idx[x][1]].set_yticks([])
-    plt.tight_layout()
+    model_results_curve = plt.imread(f"outputs/{version}/model_combined.png")
+    st.image(model_results_curve, caption='Model Training Accuracy & Losses')
+
+    st.info(
+        f" **Confusion Matrix**\n\n"
+        f" The confusion matrix is used to evaluate the performance of the model."
+        f" It compares the actual labels (true values) with the predicted labels given by the model.\n\n"
+        f" * The model correctly identified 210 healthy instances and 209 powdery mildew instances.\n "
+        f" * The model made 3 mistakes: 1 healthy instance was incorrectly classified as powdery mildew, and 2 "
+        f" powdery mildew instances were incorrectly classified as healthy.")
+
+    conf_matrix = plt.imread(f"outputs/{version}/confusion_matrix.png")
+    st.image(conf_matrix, caption='Confusion matrix')
+
+    st.info(
+        f" **Classification Report**\n\n"
+        f" The report provides a detailed performance analysis of the model."
+        f" It includes various metrics for evaluating the accuracy and effectiveness of the model.\n\n"
+        f" * In summary, the model performs exceptionally well, with high precision, recall, and F1-scores for both classes, "
+        f" and an overall accuracy of 99%.")
+
+    class_report = plt.imread(f"outputs/{version}/clf_report.png")
+    st.image(class_report, caption='Classification Report')
+    st.write("---")
+
+    st.write("### Generalised Performance on Test Set")
+
+    st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    st.info(
+        f" The model has achieved an accuracy of 99%")
     
-    st.pyplot(fig=fig)
-
-  else:
-    print("The label you selected doesn't exist.")
-    print(f"The existing options are: {labels}")
-
     st.write(
         f"For additional information, please visit "
         f"[Project README file](https://github.com/Sammy92dec/mildew-detection-in-cherry-leaves/"

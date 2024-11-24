@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 from src.data_management import download_dataframe_as_csv
-from src.machine_learning.predictive_analysis.py import (
+from src.machine_learning.predictive_analysis import (
                                                     load_model_and_predict,
                                                     resize_input_img,
                                                     plot_pred_probs
@@ -35,7 +35,7 @@ def page_powdery_mildew_detection_body():
             img_array = np.array(img_pil)
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
-            version = 'v7'
+            version = 'v1'
             resized_img = resize_input_img(img=img_pil, version=version)
             pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
             plot_pred_probs(pred_proba, pred_class)
