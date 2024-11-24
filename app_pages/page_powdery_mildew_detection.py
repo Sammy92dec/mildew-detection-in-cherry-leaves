@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 from src.data_management import download_dataframe_as_csv
-from src.machine_learning.predictive_analysis import (
+from src.machine_learning.predictive_analysis.py import (
                                                     load_model_and_predict,
                                                     resize_input_img,
                                                     plot_pred_probs
