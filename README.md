@@ -2,7 +2,9 @@
 
 The goal of this project is to visually differentiate between healthy cherry leaves and those affected by powdery mildew.
 
-Live Link: responsive CHECK
+Live Link: https://mildew-detector-in-trees-984795549977.herokuapp.com/
+
+![Responsive Image](./assets/readme_imgs/am-i-responsive.png)
 
 ## Table of Contents
 1. [Dataset Content](#dataset-content)
@@ -178,3 +180,6 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
 
 MY SISTER
 [Top ⇧](#table-of-contents)
+For getting the web app up and running-Streamlit documentation: 
+
+Project was also inspired by Code Institute Walkthrough project Malaria Detector
