@@ -111,6 +111,36 @@ This page summarises the performance metrics of the machine learning model used 
 - Line graphs displaying the accuracy and loss trends for the model
 - A summary of the generalised performance of the model on the test data set 
 
+# Data Analysis and Machine Learning Libraries
+
+Following are the list of libraries used in the project
+
+1.Numpy: It is an open-source, python library used for working with arrays. NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines.
+
+2.Pandas: It is an open-source, python package used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.
+
+3.Matplotlib: It is a cross-platform, data visualization and graphical plotting library for python.
+
+4.Seaborn: It is Python data visualization library based on Matplotlib. It will be used to visualize random distributions.
+
+5.Plotly: It is an interactive, open-soource, and browser-based gra6. Tensorflow: It is an open-sourec machine learning platform focused on deep neural networks.phing library. Used to create visualisations within Jupyter notebooks to present the data.
+
+6.Tensorflow: It is an open-source machine learning platform focused on deep neural networks.
+
+7.Shutil: Used form file copying and removal.
+
+8.Streamlit: It is used to create web apps for data science and machine learning.
+
+9.Joblib: It is a set of tools to provide lightweighting pipelining in Python.
+
+10.PIL: Python Imaging Library is a free and open-source additional library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
+
+## Fixed Bugs
+
+- Initially when I creates an app on Heroku, the stack by default does not support the Python version that I was using, so I had to change the stack of my project from 22 to 20.
+
+- The slug size was also too large. So I added the extra large files in .slugignore file.
+
 ## Unfixed Bugs
 
 - No unfixed bugs were detected 
@@ -166,8 +196,10 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
 - [Am I Responsive](https://ui.dev/amiresponsive) 
     - Used to for the image across devices in the README.md
 - [Chat GPT](https://chatgpt.com/) 
-    - Used to better word some of my descriptions and general assistance & guidance
+    - Used to better word some of my descriptions and general assistance & guidance.
 
+### Languages
+- Python
 
 ## Credits
 
@@ -175,6 +207,7 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
   - [Code Inst - Malaria Detector](https://shorturl.at/xFj5G)
 - Tutor Support for assistance & guidance:
   - [Tutor Assistance](https://learn.codeinstitute.net/ci_support/diplomainfullstacksoftwarecommoncurriculum/tutor)
+- [ssrelakshmi88/mildew-detection](https://github.com/ssreelakshmi88/mildew-detection-cherry-leaves_milestonePP5) in Cherry Leaves Detector: Readme guidance
 
 ## Acknowledgements
 
