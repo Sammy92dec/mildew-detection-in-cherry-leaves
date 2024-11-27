@@ -2,6 +2,8 @@
 
 The goal of this project is to visually differentiate between healthy cherry leaves and those affected by powdery mildew.
 
+This app is designed based on a supervised, single-label, binary classification ML model. Binary classifier is used to predict the outcome.
+
 Live Link: https://mildew-detector-in-trees-984795549977.herokuapp.com/
 
 ![Responsive Image](./assets/readme_imgs/am-i-responsive.png)
@@ -89,12 +91,19 @@ Page includes some general background on the project, the client, and the reason
 - The project hypothesis is outlined, linking the business needs with the requirements of the project
 - The conclusions of the project are stated, with success measured against the desired business outcomes.
 
+![](assets/readme_imgs/summary.jpg)
+
 ### Page 2 - Leaves Visualiser
 
 This page displays the image plots generated from the DataVisualisation notebook, which answer business requirement 1. Shown are:
 - Images displaying the mean and variance for healthy leaves(set 0), and unhealthy leaves(set 1)
 - An image showing the visual difference between an average healthy and unhealthy leaf
 - An image montage creator, with the option to generate an image montage of either healthy or unhealthy leaves from the dataset
+
+![](assets/readme_imgs/visualizer.jpg)
+![](assets/readme_imgs/healthyleaves.jpg)
+![](assets/readme_imgs/powderyleaves.jpg)
+![](assets/readme_imgs/imagemontage.jpg)
 
 ### Page 3 - Mildew Detection
 
@@ -104,12 +113,22 @@ The mildew detection page fulfils business requirement 2, providing the ability 
 - The images are displayed, with their infection status prediction and probability
 - A button allows the user to download a report with prediction details of the images they have uploaded 
 
+![](assets/readme_imgs/upload.jpg)
+
 ### Page 4 - ML Performance
 
 This page summarises the performance metrics of the machine learning model used in the project. Show are:
 - A bar graph summarising the data split between the different sets, per label
 - Line graphs displaying the accuracy and loss trends for the model
 - A summary of the generalised performance of the model on the test data set 
+
+![](assets/readme_imgs/Label-vad-test-train.jpg)
+![](assets/readme_imgs/model-history.jpg)
+![](assets/readme_imgs/combination.jpg)
+![](assets/readme_imgs/confusionmatrix.jpg)
+![](assets/readme_imgs/class.jpg)
+
+[Top ⇧](#table-of-contents)
 
 # Data Analysis and Machine Learning Libraries
 
@@ -144,6 +163,8 @@ Following are the list of libraries used in the project
 ## Unfixed Bugs
 
 - No unfixed bugs were detected 
+
+[Top ⇧](#table-of-contents) 
 
 ## Deployment
 
@@ -212,7 +233,9 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
 ## Acknowledgements
 
 MY SISTER
-[Top ⇧](#table-of-contents)
+
 For getting the web app up and running-Streamlit documentation: 
 
 Project was also inspired by Code Institute Walkthrough project Malaria Detector
+
+[Top ⇧](#table-of-contents)
