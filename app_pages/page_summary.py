@@ -43,8 +43,9 @@ def page_summary_body():
 
     st.warning(
         f"**Project Dataset**\n\n"
-        f"The available dataset contains  healthy leaves &  affected "
-        f"leaves, individually photographed against a neutral background."
+        f"The available dataset contains healthy & affected leaves.The data is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves)."
+        f"The leaves are individually photographed against a neutral background."
+        
     )
 
     st.write(

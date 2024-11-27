@@ -143,12 +143,20 @@ The mildew detection page fulfils business requirement 2, providing the ability 
 
 ![](assets/readme_imgs/upload.jpg)
 
+### Page 4 - Project Hypothesis
+
+This page includes the hypothesis of the ML
+- Includes main Hypothesis and validation according to the business requirement.
+
 ### Page 4 - ML Performance
 
 This page summarises the performance metrics of the machine learning model used in the project. Show are:
 - A bar graph summarising the data split between the different sets, per label
 - Line graphs displaying the accuracy and loss trends for the model
-- A summary of the generalised performance of the model on the test data set 
+- A summary of the generalised performance of the model on the test dataset
+- Summary of the confusion matrix
+- Summary of the classification report
+- A generalised test set
 
 ![](assets/readme_imgs/Label-vad-test-train.jpg)
 ![](assets/readme_imgs/model-history.jpg)
@@ -204,6 +212,11 @@ Following are the list of libraries used in the project
 
 - The slug size was also too large. So I added the extra large files in .slugignore file.
 
+- The Image montage wasn't working cause the list was in the .gitignore .I just had to remove validation dataset.
+
+- The data was running the whole Epoch so had to fix the earlystopp with patience 3 instead 4 and added a mode to max.It fixed that it stops early. 
+
+
 ## Unfixed Bugs
 
 - No unfixed bugs were detected 
@@ -255,6 +268,9 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
 - Code Institute - Walkthrough Project Malaria Detector for steps, guidance and following along to get this far in my project 5.
 
 - [ssrelakshmi88/mildew-detection](https://github.com/ssreelakshmi88/mildew-detection-cherry-leaves_milestonePP5) in Cherry Leaves Detector: Readme guidance
+
+- [Flaticon](https://www.flaticon.com/free-icons/cherry)
+- For the cute cherry icon for my tab.
 
 ## Acknowledgements
 
