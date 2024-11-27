@@ -21,17 +21,34 @@ Live Link: https://mildew-detector-in-trees-984795549977.herokuapp.com/
 10. [Credits](#credits)
 11. [Acknowledgements](#acknowledgements)
 
+## Crisp-DM: Definition and Usage
+
+CRISP-DM (Cross-Industry Standard Process for Data Mining) is a well-established methodology for data mining and analytics projects. It provides a structured framework, typically broken down into these key stages:
+
+- Business Understanding: Define the business problem, objectives, and goals.
+- Data Understanding: Collect and explore the data, ensuring its quality and relevance.
+- Data Preparation: Clean, transform, and engineer the data to make it ready for analysis.
+- Modeling: Choose and develop the appropriate predictive models.
+- Evaluation: Assess the model's performance and its alignment with business objectives.
+- Deployment: Deploy the model into production for real-world use.
+- Monitoring: Continuously monitor and maintain the model’s performance over time.
+
+- This process helps organizations systematically approach data mining and analytics to achieve successful outcomes.
+
+
 ## Dataset Content
 
 - The dataset used for this project is supplied by Code Institute and sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
 - The dataset contains +4 thousand images taken from the client's crop fields.The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. 
 The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
+![](assets/readme_imgs/kaggle-healthy.jpg)
+![](assets/readme_imgs/powdery.jpg)
+
+
 ## Business Requirements
 
-The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
-
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew.The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
 
 1. The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 2. The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
@@ -41,12 +58,17 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Hypothesis and how to validate?
 
-Hypothesis: The machine learning model can accurately predict with the use of images whether a cherry leaf is healthy or contains powdery mildew based on its features
+**Hypothesis**: A machine learning model can effectively classify cherry leaves as healthy or affected by powdery mildew using image-based features.
 
-Validation: By following a systematic approach that includes data preparation, model training, and evaluation of healthy cherry leaves images and those that contain powdery mildew. 
+**Validation**: This hypothesis will be tested through a systematic workflow involving data preparation, model training, and evaluation. The dataset will include images of healthy cherry leaves and those affected by powdery mildew.
 
-Cherry leaves containing powdery mildew can be distinguished from healthy leaves by their appearance. This is verified by creating an average image study and an image montage to determine the differences in the appearance of both contaminated leaves and healthy leaves.
-Contaminated leaves and healthy leaves can be determined with a 97% accuracy, this will be verified by evaluating the model on the test dataset, which achieves 99% accuracy.
+The distinction between healthy and diseased leaves is based on observable differences in their appearance. These differences will be analyzed using methods such as average image studies and image montages to highlight visual contrasts between the two categories.
+
+The model's ability to differentiate between contaminated and healthy leaves will be evaluated using a test dataset with a classification accuracy of 97%.
+
+**Hypothesis**:A user-friendly dashboard can be developed to provide instant cherry leaf health assessments based on uploaded images.
+
+**Validation**:To fulfill this hypothesis, we will design and develop a user-friendly web dashboard. During validation, we will conduct usability testing with potential end-users to ensure the dashboard's intuitiveness and effectiveness.It will demonstrate its capability to deliver quick and accurate cherry leaf health assessments.
 
 ## The rationale to map the business requirements
 
@@ -134,25 +156,25 @@ This page summarises the performance metrics of the machine learning model used 
 
 Following are the list of libraries used in the project
 
-1.Numpy: It is an open-source, python library used for working with arrays. NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines.
+1.**Numpy**: It is an open-source, python library used for working with arrays. NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines.
 
-2.Pandas: It is an open-source, python package used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.
+2.**Pandas**: It is an open-source, python package used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.
 
-3.Matplotlib: It is a cross-platform, data visualization and graphical plotting library for python.
+3.**Matplotlib**: It is a cross-platform, data visualization and graphical plotting library for python.
 
-4.Seaborn: It is Python data visualization library based on Matplotlib. It will be used to visualize random distributions.
+4.**Seaborn**: It is Python data visualization library based on Matplotlib. It will be used to visualize random distributions.
 
-5.Plotly: It is an interactive, open-soource, and browser-based gra6. Tensorflow: It is an open-sourec machine learning platform focused on deep neural networks.phing library. Used to create visualisations within Jupyter notebooks to present the data.
+5.**Plotly**: It is an interactive, open-soource, and browser-based gra6. Tensorflow: It is an open-sourec machine learning platform focused on deep neural networks.phing library. Used to create visualisations within Jupyter notebooks to present the data.
 
-6.Tensorflow: It is an open-source machine learning platform focused on deep neural networks.
+6.**Tensorflow**: It is an open-source machine learning platform focused on deep neural networks.
 
-7.Shutil: Used form file copying and removal.
+7.**Shutil**: Used form file copying and removal.
 
-8.Streamlit: It is used to create web apps for data science and machine learning.
+8.**Streamlit**: It is used to create web apps for data science and machine learning.
 
-9.Joblib: It is a set of tools to provide lightweighting pipelining in Python.
+9.**Joblib**: It is a set of tools to provide lightweighting pipelining in Python.
 
-10.PIL: Python Imaging Library is a free and open-source additional library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
+10.**PIL**: Python Imaging Library is a free and open-source additional library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats.
 
 ## Fixed Bugs
 
