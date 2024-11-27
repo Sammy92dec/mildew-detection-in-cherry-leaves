@@ -7,5 +7,3 @@ kaggle.json
 .gitpod.yml
 inputs/cherry_leaves_dataset/cherry-leaves/train/healthy
 inputs/cherry_leaves_dataset/cherry-leaves/train/powdery_mildew
-inputs/cherry_leaves_dataset/cherry-leaves/validation/healthy
-inputs/cherry_leaves_dataset/cherry-leaves/validation/powdery_mildew
