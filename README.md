@@ -10,18 +10,34 @@ Live Link: https://mildew-detector-in-trees-984795549977.herokuapp.com/
 
 ## Table of Contents
 1. [Dataset Content](#dataset-content)
-2. [Business Requirements](#business-requirements)
-3. [Hypothesis and Validation](#hypothesis-and-how-to-validate)
-4. [The rationale to map the business requirements](#the-rationale-to-map-the-business-requirements)
-5. [ML Business Case](#ml-business-case)
-6. [Dashboard Design](#dashboard-design)
-7. [Deployment](#deployment)
-8. [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+2. [Crisp-DM](#crisp-dm)
+3. [Business Requirements](#business-requirements)
+4. [Hypothesis and Validation](#hypothesis-and-how-to-validate)
+5. [The rationale to map the business requirements](#the-rationale-to-map-the-business-requirements)
+6. [ML Business Case](#ml-business-case)
+7. [Dashboard Design](#dashboard-design)
+8. [Deployment](#deployment)
 9. [Technologies and Languages Used](#technologies-and-languages-used)
-10. [Credits](#credits)
-11. [Acknowledgements](#acknowledgements)
+10. [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+11. [Credits](#credits)
+12. [Acknowledgements](#acknowledgements)
 
-## Crisp-DM: Definition and Usage
+
+## Dataset Content
+
+- The dataset used for this project is supplied by Code Institute and sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
+
+- The dataset contains more than 4000 images of healthy or diseased cherry leaves taken from Farmy & Foods crop fields. Diseased cherry leaves contain powdery mildew, a fungal disease that affects a wide range of plants. This is a serious concern for the company since it can compromise their product quality. 
+
+- The dataset is available at this link: https://www.kaggle.com/datasets/codeinstitute/cherry-leaves
+
+![](assets/readme_imgs/kaggle-healthy.jpg)
+![](assets/readme_imgs/powdery.jpg)
+
+
+## Crisp-DM 
+
+### Definition and Usage
 
 CRISP-DM (Cross-Industry Standard Process for Data Mining) is a well-established methodology for data mining and analytics projects. It provides a structured framework, typically broken down into these key stages:
 
@@ -34,16 +50,6 @@ CRISP-DM (Cross-Industry Standard Process for Data Mining) is a well-established
 - Monitoring: Continuously monitor and maintain the model’s performance over time.
 
 - This process helps organizations systematically approach data mining and analytics to achieve successful outcomes.
-
-
-## Dataset Content
-
-- The dataset used for this project is supplied by Code Institute and sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
-- The dataset contains +4 thousand images taken from the client's crop fields.The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. 
-The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
-
-![](assets/readme_imgs/kaggle-healthy.jpg)
-![](assets/readme_imgs/powdery.jpg)
 
 
 ## Business Requirements
@@ -152,6 +158,22 @@ This page summarises the performance metrics of the machine learning model used 
 
 [Top ⇧](#table-of-contents)
 
+## Technologies and Languages Used
+
+- [Git & GitHub](https://github.com/)
+    - Version control and storage code
+- [GitPod](https://www.gitpod.io/) 
+    - Used as the development environment
+- [Heroku](https://www.heroku.com/) 
+    - Used to deploy the site (Cloud based)
+- [Am I Responsive](https://ui.dev/amiresponsive) 
+    - Used to for the image across devices in the README.md
+- [Chat GPT](https://chatgpt.com/) 
+    - Used to better word some of my descriptions and general assistance & guidance.
+
+### Languages
+- Python
+
 # Data Analysis and Machine Learning Libraries
 
 Following are the list of libraries used in the project
@@ -228,36 +250,18 @@ Forking a GitHub repository will allow you to make a copy of the repository, cha
 10. The deployment process should happen smoothly if all deployment files are fully functional. Click the button 'Open App' on the top of the page to access your App.
 11. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
-## Technologies and Languages Used
-
-- [Git & GitHub](https://github.com/)
-    - Version control and storage code
-- [GitPod](https://www.gitpod.io/) 
-    - Used as the development environment
-- [Heroku](https://www.heroku.com/) 
-    - Used to deploy the site (Cloud based)
-- [Am I Responsive](https://ui.dev/amiresponsive) 
-    - Used to for the image across devices in the README.md
-- [Chat GPT](https://chatgpt.com/) 
-    - Used to better word some of my descriptions and general assistance & guidance.
-
-### Languages
-- Python
-
 ## Credits
 
-- Code Institute - Walkthrough Project for steps, guidance and following along to get this far in my project 5:
-  - [Code Inst - Malaria Detector](https://shorturl.at/xFj5G)
-- Tutor Support for assistance & guidance:
-  - [Tutor Assistance](https://learn.codeinstitute.net/ci_support/diplomainfullstacksoftwarecommoncurriculum/tutor)
+- Code Institute - Walkthrough Project Malaria Detector for steps, guidance and following along to get this far in my project 5.
+
 - [ssrelakshmi88/mildew-detection](https://github.com/ssreelakshmi88/mildew-detection-cherry-leaves_milestonePP5) in Cherry Leaves Detector: Readme guidance
 
 ## Acknowledgements
 
-MY SISTER
+My mentor **Precious Ijege** for support and guidance.
 
 For getting the web app up and running-Streamlit documentation: 
 
-Project was also inspired by Code Institute Walkthrough project Malaria Detector
+Project was also inspired by Code Institute Walkthrough project 
 
 [Top ⇧](#table-of-contents)
